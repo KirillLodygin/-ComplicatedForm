@@ -1,4 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
+@font-face{
+
+  font-family: 'PermanentMarker';
+
+  src: url('./fonts/PermanentMarker-Regular.ttf') format('truetype');
+
+  font-weight: 700;
+
+  font-style: normal;
+}
 
 body {
   margin: 0;

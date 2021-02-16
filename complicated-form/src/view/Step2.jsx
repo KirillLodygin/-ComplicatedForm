@@ -10,6 +10,7 @@ import {MainContainer} from './components/MainContainer';
 import {Form} from "./components/Form";
 import {Input} from "./components/Input";
 import {PrimaryButton} from "./components/PrimaryButton";
+import {useData} from "../DataContext";
 
 const schema = yup.object().shape({
 	email:yup
@@ -31,7 +32,14 @@ const normalizePhoneNumber = (value) => {
 export const Step2 = () => {
 	const history = useHistory();
 
+	const {data, setValues} = useData();
+
 	const {register, handleSubmit, errors, watch} = useForm({
+		defaultValues: {
+			email: data.email,
+			hasPhone: data.hasPhone,
+			phoneNumber: data.phoneNumber
+		},
 		mode: "onBlur",
 		resolver: yupResolver(schema)
 	});
@@ -40,11 +48,12 @@ export const Step2 = () => {
 
 	const onSubmit = (data) => {
 		history.push('/step3');
+		setValues(data);
 	};
 
 	return (
 		<MainContainer>
-			<Typography component="h2" variant="h5">&#128752; Step 2</Typography>
+			<Typography component="h2" variant="h5">&#9760; Step 2</Typography>
 
 			<Form
 				onSubmit={handleSubmit(onSubmit)}
@@ -63,6 +72,8 @@ export const Step2 = () => {
 				<FormControlLabel
 					control={
 						<Checkbox
+							defaultValue={data.hasPhone}
+							defaultChecked={data.hasPhone}
 							name="hasPhone"
 							inputRef={register}
 							color="primary"
