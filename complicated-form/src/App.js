@@ -3,9 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {Header} from "./view/components/Header";
 import {Step1} from "./view/Step1";
 import {Step2} from "./view/Step2";
-import {Step3} from "./view/Step3"
-
-const Result = () => <>Result</>;
+import {Step3} from "./view/Step3";
+import {Result} from "./view/Result";
 
 function App() {
   return (
