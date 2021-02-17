@@ -37,7 +37,7 @@ export const FileInput = ({control, name}) => {
 								variant="outlined"
 								{...getRootProps()}
 							>
-								<CloudUpload/>
+								<CloudUpload className={styles.icon}/>
 								<input {...getInputProps()} name={name} onBlur={onBlur}/>
 								<p>Drag'n'drop files here, or click to select files</p>
 							</Paper>

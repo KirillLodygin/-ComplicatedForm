@@ -16,7 +16,16 @@ const schema = yup.object().shape({
 	email:yup
 		.string()
 		.email("Email should have correct format")
-		.required("Email is required field")
+		.required("Email is required field"),
+
+	hasPhone:yup.boolean(),
+
+	phoneNumber: yup
+		.string()
+		.when("hasPhone", {
+			is: true,
+			then: yup.string().required("Enter your phone number")
+		})
 });
 
 const normalizePhoneNumber = (value) => {
@@ -90,6 +99,8 @@ export const Step2 = () => {
 							type="tel"
 							label="Phone number"
 							name="phoneNumber"
+							error={!!errors.phoneNumber}
+							helperText={errors?.phoneNumber?.message}
 							onChange={(event) => {
 								event.target.value = normalizePhoneNumber(event.target.value)
 							}}
