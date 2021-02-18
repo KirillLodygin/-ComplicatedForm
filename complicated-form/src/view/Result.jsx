@@ -35,8 +35,7 @@ export const Result = () => {
 
 	const {files} = data;
 
-	const onSubmit = () => {
-		/*
+	const onSubmit = async () => {
 		const formData = new FormData();
 
 		if(data.files){
@@ -52,17 +51,18 @@ export const Result = () => {
 		const res = await fetch("http://localhost:4000/", {
 			method: "POST",
 			body: formData
-		})
+		});
 
 		if(res.status === 200){
 			swal("Good job!", "You've passed the challenge!", "success");
 			setSuccess(true);
 		}
 
-		 */
-
+		/*
 		swal("Good job!", "You've passed the challenge!", "success");
 		setSuccess(true);
+
+		 */
 	};
 
 	return(
