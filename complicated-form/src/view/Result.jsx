@@ -10,7 +10,6 @@ import {MainContainer} from "./components/MainContainer";
 import {PrimaryButton} from "./components/PrimaryButton";
 import {useData} from "../DataContext";
 import swal from 'sweetalert';
-//import {Confetti} from "react-confetti";
 
 const useStyles = makeStyles({
 	root: {
@@ -65,7 +64,6 @@ export const Result = () => {
 		swal("Good job!", "You've passed the challenge!", "success");
 		setSuccess(true);
 	};
-
 
 	return(
 		<MainContainer>
