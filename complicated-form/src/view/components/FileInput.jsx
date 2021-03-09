@@ -4,7 +4,7 @@ import {List, ListItem, ListItemIcon, ListItemText, Paper, makeStyles} from "@ma
 import {CloudUpload, InsertDriveFile} from "@material-ui/icons";
 import Dropzone from "react-dropzone";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
 	root: {
 		backgroundColor: "#eee",
 		textAlign: "center",
