@@ -58,11 +58,6 @@ export const Result = () => {
 			setSuccess(true);
 		}
 
-		/*
-		swal("Good job!", "You've passed the challenge!", "success");
-		setSuccess(true);
-
-		 */
 	};
 
 	return(
