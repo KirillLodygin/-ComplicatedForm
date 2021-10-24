@@ -1,20 +1,20 @@
-import React, {createContext, useContext, useState} from "react";
+import React, { createContext, useContext, useState } from 'react';
 
 const DataContext = createContext();
 
-export  const useData = () => useContext(DataContext);
+export const useData = () => useContext(DataContext);
 
-export const DataProvider = ({children}) => {
+export const DataProvider = ({ children }) => {
 	const [data, setData] = useState({});
 	const setValues = (values) => {
 		setData((prevData) => ({
 			...prevData,
-			...values
+			...values,
 		}));
 	};
 
 	return (
-		<DataContext.Provider value={{data, setValues}}>
+		<DataContext.Provider value={{ data, setValues }}>
 			{children}
 		</DataContext.Provider>
 	);
